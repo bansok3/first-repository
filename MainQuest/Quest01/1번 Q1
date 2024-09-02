@@ -1,0 +1,21 @@
+import random
+
+class Account:
+    def __init__(self, owner, balance):
+        self.bank_name = "신한은행"
+        self.owner = owner
+        self.balance = balance
+        self.account_number = self.generate_account_number()
+
+    def generate_account_number(self):
+        part1 = str(random.randint(100, 999))
+        part2 = str(random.randint(10, 99))
+        part3 = str(random.randint(100000, 999999))
+        return f"{part1}-{part2}-{part3}"
+
+# Example usage:
+account = Account("반업석", 10000)
+print(f"은행이름: {account.bank_name}")
+print(f"예금주: {account.owner}")
+print(f"계좌번호: {account.account_number}")
+print(f"잔액: {account.balance}")
